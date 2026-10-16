@@ -41,7 +41,7 @@ If a feature is not listed as present in the other references, assume it is miss
 **Ecosystem**
 
 - Slidev themes and addons (they are Vue), a theme or addon gallery, community themes.
-- A VS Code extension, a Prettier plugin (the `format` command covers the markdown structure).
+- A Prettier plugin (the `format` command covers the markdown structure). The VS Code extension is in the separate slide.ng-vscode repository (first version, not released, never run inside VS Code).
 - `src/app/components` is not scanned; components go in `components/` next to the deck.
 
 **Not checked** (may work, was never tried): Firefox and Safari for exports and offline folders, real devices over a LAN, a real screen-share picker, wake lock, real Google Fonts for self-hosting, GitHub Pages / Netlify hosting, addons built end to end, `npm install slide-ng` from a registry (the package is private for now).

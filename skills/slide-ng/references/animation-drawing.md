@@ -5,9 +5,9 @@ description: Drawing on slides (drauu), its toolbar and the drawings headmatter
 
 # Drawing
 
-The pen button in the bar (or the right-click menu) opens a toolbar: pen, line, arrow, ellipse, rectangle, eraser, colours, width, undo, redo, clear, pin.
+The pen button in the bar (or the right-click menu) opens a toolbar: pen, line, arrow, ellipse, rectangle, eraser, colours, width, undo, redo, clear, pin. The eraser has no key; use its button.
 
-Keys while it is open: `L` line, `A` arrow, `S` stylus, `R` rectangle, `E` eraser, `C` clear, digits for colours, Ctrl+Z undo, Escape closes.
+Keys while it is open: `L` line, `A` arrow, `S` stylus, `R` rectangle, `E` ellipse, `C` clear, digits for colours, Ctrl+Z undo, Escape closes.
 
 Drawings are per slide, shared between windows, and kept in the browser (`localStorage`).
 
