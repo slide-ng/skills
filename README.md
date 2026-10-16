@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme-banner-dark.png">
+  <img alt="slide.ng" src="assets/readme-banner-light.png" width="800">
+</picture>
+
 # slide.ng agent skill
 
 A standalone, installable copy of the agent skill for [slide.ng](https://github.com/slide-ng/slide.ng): a folder with `SKILL.md` and `references/` that teaches a coding agent to write, check and present slide.ng decks (markdown slides with Angular templates, a Slidev port for Angular).
