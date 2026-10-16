@@ -14,6 +14,8 @@ If a feature is not listed as present in the other references, assume it is miss
 - `selectable`, `themeConfig`, `TitleRenderer` (slide titles are plain text), `PoweredBySlidev`, `notesAutoRuby`.
 - Slide hooks `onSlideEnter`, `onSlideLeave`, `useIsSlideActive`.
 - `<slide-ng-click>` as a tag, `.hide` modifiers (use `slide-ng-click-hide`), PascalCase tags, `--uno` in `<style>`.
+- UnoCSS attributify (`flex="~"`), variant groups (`hover:(a b)`), the typography preset (`prose`), `transformerDirectives`. Use plain classes.
+- markdown-it typographer (smart quotes, `--`, `...`) and `v-pre` (use `&#123;&#123;` for a literal `{{`).
 - `colorSchema: all`. `routerMode: memory`, `setup/routes.ts`.
 
 **Animation**

@@ -13,6 +13,7 @@ Slides are written in one markdown file (`slides.md`). Each slide becomes a stan
 - Slides need live code, Shiki highlighting, Monaco editors, math, Mermaid or PlantUML, click animations, presenter notes, drawing, or export to PDF, PNG, PPTX or Markdown.
 - A deck must work offline (an offline folder, a PWA or a PDF).
 - Somebody asks for Slidev features or Vue syntax in a slide.ng deck: read `references/core-slidev-differences.md` and `references/not-supported.md` first.
+- A whole Slidev deck (Vue components, global layers, styles) is to be ported: follow `references/port-a-slidev-deck.md`.
 
 ## Quick Start
 
@@ -97,6 +98,7 @@ Angular control flow works.
 | Topic               | Description                                             | Reference                                                        |
 | ------------------- | ------------------------------------------------------- | ---------------------------------------------------------------- |
 | Slidev differences  | Vue habits that fail and the slide.ng way               | [core-slidev-differences](references/core-slidev-differences.md) |
+| Port a Slidev deck  | Recipe, Vue to Angular example, pitfalls                | [port-a-slidev-deck](references/port-a-slidev-deck.md)           |
 | Angular syntax      | Template syntax in markdown, converter rules            | [core-angular-syntax](references/core-angular-syntax.md)         |
 | Syntax              | Separators, frontmatter, notes                          | [core-syntax](references/core-syntax.md)                         |
 | Headmatter          | Deck-wide keys                                          | [core-headmatter](references/core-headmatter.md)                 |
