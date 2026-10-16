@@ -1,0 +1,61 @@
+name: Bug report
+description: A wrong or missing instruction in the skill, or a problem with installing or syncing it
+labels: [bug, needs triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The skill is written in the [slide.ng](https://github.com/slide-ng/slide.ng) core repository and mirrored here. A wrong or missing instruction can be reported here so it is not lost, but the fix is made in the core.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong
+      options:
+        - A wrong or missing instruction in the skill
+        - A code sample in the skill that does not work
+        - The skill is out of date compared with the core
+        - Installing the skill (copy, CLI or a skill installer)
+        - The sync or check scripts, CI or tooling of this repository
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: File of the skill
+      description: The file and, if you can, the heading or line that is wrong.
+      placeholder: skills/slide-ng/references/code-magic-move.md
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did the agent do or what does the file say, and what should it say or do instead? A short transcript or the generated slides help.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal slides.md or command
+      description: The smallest deck or command that shows the problem.
+      render: markdown
+  - type: input
+    id: versions
+    attributes:
+      label: Skill version and slide.ng version
+      description: The tag or commit of this repository (see SOURCE.json), and the version of slide.ng you use.
+      placeholder: skill v0.1.0, slide.ng 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Agent tool, Node.js version and operating system
+      placeholder: Node 22.23.3, Ubuntu 24.04
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched the existing issues.
+          required: true
+        - label: I know that the fix for the skill content is made in the slide.ng core repository.
+          required: true

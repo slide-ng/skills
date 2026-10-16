@@ -1,0 +1,46 @@
+name: Feature request
+description: Suggest something the skill should cover, or a way to install or keep it
+labels: [feature, needs triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The skill is written in the [slide.ng](https://github.com/slide-ng/slide.ng) core repository and mirrored here. New topics are added there; this form is for tracking them and for requests about this repository.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of request is it
+      options:
+        - A topic or reference the skill is missing
+        - A better instruction or example in an existing reference
+        - A way to install or update the skill
+        - The sync, the checks or CI of this repository
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What did an agent get wrong or not know? A task you gave it is a good example.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like
+      description: What the skill should say or do. If slide.ng has the feature, link its documentation.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Other ways you tried
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched the existing issues.
+          required: true
+        - label: I might be able to help write it in the core repository.
