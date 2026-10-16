@@ -57,7 +57,7 @@ theme: default
 
 Count is {{ 1 + 2 }}.
 
-<div v-click>Appears on the first click</div>
+<div slide-ng-click>Appears on the first click</div>
 
 <!-- Speaker notes go in the last HTML comment -->
 
@@ -79,13 +79,13 @@ Angular control flow works.
 - `---` on its own line separates slides; a YAML block after it is that slide's **frontmatter**; the first one is the **headmatter** (deck settings).
 - The last HTML comment of a slide is its speaker note.
 - `{{ }}`, `@if`, `@for`, `@let`, `[prop]="x"`, `(event)="y"`, `#ref` are Angular template syntax. **Not Vue**: no `v-if`, `v-for`, `:prop`, `@click`, `<script setup>`.
-- Tags are lower-case with dashes: `<slide-toc />`, `<slide-link to="3">`. Your own components are Angular standalone components in `components/*.ts`.
+- Tags are lower-case with dashes: `<slide-ng-toc />`, `<slide-ng-link to="3">`. Your own components are Angular standalone components in `components/*.ts`.
 - Use UnoCSS (Tailwind-like) classes in `class=` and `class:`.
 
 ## Rules for agents
 
 1. Do not invent Slidev or Vue features. Look in the tables below; if a feature is not there, read `references/not-supported.md`.
-2. `v-click` is an attribute (`<div v-click>`), never the tag `<v-click>`. Use `v-click-hide`, not `v-click.hide`.
+2. `slide-ng-click` is an attribute (`<div slide-ng-click>`), never the tag `<slide-ng-click>`. Use `slide-ng-click-hide`, not `slide-ng-click.hide`.
 3. Put `@if`, `@for`, `@let` and their closing `}` on their own lines. Leave blank lines around markdown lists inside component tags.
 4. Add a component by creating `components/<name>.ts` next to `slides.md` (selector string literal, then `export class`); never edit `scripts/lib/registry.mjs` for a deck.
 5. Keep the dev server's output clean of `[slides]` warnings, then run `slide-ng build`.
@@ -121,21 +121,21 @@ Angular control flow works.
 | Custom layouts   | `layouts/*.ts`                    | [layout-custom](references/layout-custom.md)               |
 | Canvas size      | `canvasWidth`, `aspectRatio`      | [layout-canvas-size](references/layout-canvas-size.md)     |
 | Zoom             | `zoom`                            | [layout-zoom](references/layout-zoom.md)                   |
-| Transform        | `<transform>`                     | [layout-transform](references/layout-transform.md)         |
-| Draggable        | `v-drag`                          | [layout-draggable](references/layout-draggable.md)         |
+| Transform        | `<slide-ng-transform>`            | [layout-transform](references/layout-transform.md)         |
+| Draggable        | `slide-ng-drag`                   | [layout-draggable](references/layout-draggable.md)         |
 | Layers           | `global-top`, `slide-bottom`, ... | [layout-global-layers](references/layout-global-layers.md) |
 
 ## Animation
 
-| Feature       | Description                                 | Reference                                                      |
-| ------------- | ------------------------------------------- | -------------------------------------------------------------- |
-| Clicks        | `v-click`, `v-after`, `v-click-hide`        | [animation-clicks](references/animation-clicks.md)             |
-| Click lists   | `<v-clicks>`, `<v-switch>`, `<v-click-gap>` | [animation-click-lists](references/animation-click-lists.md)   |
-| Click markers | `[click]` in notes                          | [animation-click-marker](references/animation-click-marker.md) |
-| Transitions   | `slide-left`, `fade`, `view-transition`     | [animation-transitions](references/animation-transitions.md)   |
-| Marks         | `v-mark`                                    | [animation-marks](references/animation-marks.md)               |
-| Motion        | `v-motion`                                  | [animation-motion](references/animation-motion.md)             |
-| Drawing       | pen toolbar, `drawings`                     | [animation-drawing](references/animation-drawing.md)           |
+| Feature       | Description                                                      | Reference                                                      |
+| ------------- | ---------------------------------------------------------------- | -------------------------------------------------------------- |
+| Clicks        | `slide-ng-click`, `slide-ng-after`, `slide-ng-click-hide`        | [animation-clicks](references/animation-clicks.md)             |
+| Click lists   | `<slide-ng-clicks>`, `<slide-ng-switch>`, `<slide-ng-click-gap>` | [animation-click-lists](references/animation-click-lists.md)   |
+| Click markers | `[click]` in notes                                               | [animation-click-marker](references/animation-click-marker.md) |
+| Transitions   | `slide-left`, `fade`, `view-transition`                          | [animation-transitions](references/animation-transitions.md)   |
+| Marks         | `slide-ng-mark`                                                  | [animation-marks](references/animation-marks.md)               |
+| Motion        | `slide-ng-motion`                                                | [animation-motion](references/animation-motion.md)             |
+| Drawing       | pen toolbar, `drawings`                                          | [animation-drawing](references/animation-drawing.md)           |
 
 ## Code
 
@@ -236,12 +236,12 @@ title: Talk
 
 # Point one
 
-<v-clicks>
+<slide-ng-clicks>
 
 - a
 - b
 
-</v-clicks>
+</slide-ng-clicks>
 
 ---
 layout: end

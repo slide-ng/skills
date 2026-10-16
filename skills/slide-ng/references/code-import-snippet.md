@@ -20,6 +20,8 @@ description: Import a file or a region of it into a code block with <<<
 - There is no `snippets/` folder convention: write the real path.
 - `<<< ... {monaco-write}` makes the block an editor that saves to the file, see `code-monaco-write.md`.
 
+The file must be inside the deck's folder or a theme or addon folder (real path; `@/../x`, absolute paths and symlinks that lead out are errors). `allowOutsideRoot: true` in the deck's own headmatter allows other places.
+
 <!-- verify-file: snippets/example.ts -->
 
 ```ts

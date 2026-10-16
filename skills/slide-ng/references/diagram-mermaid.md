@@ -16,7 +16,7 @@ A[Text] --> B{Decision}
 
 - `theme` defaults to `dark` or `default` following the colour mode. Any other key goes to Mermaid's `initialize`.
 - While a diagram is drawn its element has `data-slide-ng-waitfor`; the export waits for it to go away.
-- `<mermaid code="..." />` works as a tag too.
+- `<slide-ng-mermaid code="..." />` works as a tag too.
 - Global config: `setup/mermaid.ts`, see `setup-mermaid.md`.
 
 <!-- verify -->

@@ -21,7 +21,7 @@ The frontmatter of the **first slide** configures the deck. Other keys are kept 
 | `duration`, `timer`                                                                                                   | presenter timer, see `presenter-timer.md`                                                   |
 | `drawings`, `presenter`, `editor`, `record`, `contextMenu`, `wakeLock`                                                | tools, see `presenter-switches.md`                                                          |
 | `download`, `exportFilename`, `export`, `remoteAssets`, `pwa`                                                         | build and export, see `build-*.md`, `export-*.md`                                           |
-| `dragPos`                                                                                                             | named positions for `v-drag`, see `layout-draggable.md`                                     |
+| `dragPos`                                                                                                             | named positions for `slide-ng-drag`, see `layout-draggable.md`                              |
 
 <!-- verify -->
 

@@ -22,6 +22,8 @@ class: from-here
 
 The imported file is a normal slides file; its first frontmatter is its first slide's, not a headmatter for the deck.
 
+The imported file must be inside the deck's folder or a theme or addon folder, otherwise the build stops with an error; a leading `/` means the deck's folder. `allowOutsideRoot: true` in the deck's own headmatter lifts the rule.
+
 <!-- verify-file: pages/intro.md -->
 
 ```md

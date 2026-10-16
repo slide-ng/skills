@@ -23,7 +23,7 @@ What the flag does:
 - Presenter at `index.html#/presenter/1`, audience at `index.html#/1` in a second window of the same browser profile and folder; they sync with a BroadcastChannel. Drawings and sync are kept per folder.
 - The PDF button opens `<exportFilename>.pdf` in a new tab.
 
-Still needs the network: PlantUML, `<youtube>`, `<tweet>`, `<blue-sky>`, and pictures or fonts that could not be downloaded at build time (watch the build for `could not download`).
+Still needs the network: PlantUML, `<slide-ng-youtube>`, `<slide-ng-tweet>`, `<slide-ng-blue-sky>`, and pictures or fonts that could not be downloaded at build time (watch the build for `could not download`).
 
 Size: a deck with Monaco and Mermaid can be a 16 MB script; a plain deck is about 450 kB.
 

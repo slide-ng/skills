@@ -15,7 +15,7 @@ There is no global `$slidev`, `$nav`, `$clicks` or `$page` in markdown. A compon
 | slide number of this slide                         | `SLIDE_NO` from `slide-ng/lib/slide-context`                                                                                                                  |
 | `onSlideEnter`, `onSlideLeave`, `useIsSlideActive` | missing: use `effect()` on `Nav.no()` and `SLIDE_NO`                                                                                                          |
 
-In markdown itself use `<slide-current-no />`, `<slides-total />` and `<render-when>`.
+In markdown itself use `<slide-ng-current-no />`, `<slide-ng-total />` and `<slide-ng-render-when>`.
 
 Values are Angular **signals**: call them (`nav.no()`), and use `computed()` or `effect()` for derived values.
 

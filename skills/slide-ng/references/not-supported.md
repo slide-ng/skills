@@ -13,24 +13,24 @@ If a feature is not listed as present in the other references, assume it is miss
 - `<script setup>`, Vue directives other than the slide.ng ones, a Vue-to-Angular converter.
 - `selectable`, `themeConfig`, `TitleRenderer` (slide titles are plain text), `PoweredBySlidev`, `notesAutoRuby`.
 - Slide hooks `onSlideEnter`, `onSlideLeave`, `useIsSlideActive`.
-- `<v-click>` as a tag, `v-click.hide` modifiers, PascalCase tags, `--uno` in `<style>`.
+- `<slide-ng-click>` as a tag, `.hide` modifiers (use `slide-ng-click-hide`), PascalCase tags, `--uno` in `<style>`.
 - `colorSchema: all`. `routerMode: memory`, `setup/routes.ts`.
 
 **Animation**
 
 - Custom transition objects (Vue `TransitionGroupProps`, class names), `clickAnimation`, `preloadImages`, slide `preload`.
-- `v-motion` presets, springs, `hovered`, `tapped`, `focused`, `visible`, keyframe lists.
+- `slide-ng-motion` presets, springs, `hovered`, `tapped`, `focused`, `visible`, keyframe lists.
 
 **Code**
 
 - Monaco type loading (`monacoTypesSource`, `monacoRunAdditionalDeps`), markdown-it plugins, a run context for code runners.
 - Twoslash `dev|build` switch, `shiki.magicMove` options other than duration and copy, the `~icon~` code group titles, `mhchem`.
-- `<youtube>` start time and playlists.
+- `<slide-ng-youtube>` start time and playlists.
 
 **Presenting**
 
 - A separate camera recording file, mp4 or mkv, cloud upload. No HTTPS for `--remote`.
-- Pinch zoom, touch tuning for drawing and `v-drag`.
+- Pinch zoom, touch tuning for drawing and `slide-ng-drag`.
 
 **CLI and build**
 

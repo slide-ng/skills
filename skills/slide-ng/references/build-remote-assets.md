@@ -12,6 +12,8 @@ description: Download remote pictures into the build with remoteAssets
 - The download runs on the machine that builds: build untrusted decks without `remoteAssets`.
 - Check the build output for `could not download` lines.
 
+The download refuses loopback, private and link-local addresses (also after redirects), stops at 20 MB, takes only files that start like a picture, and never downloads SVG (it stays remote; save it into the deck instead).
+
 <!-- verify -->
 
 ```md

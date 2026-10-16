@@ -18,7 +18,7 @@ slide.ng is **not Vue**. Each slide becomes a standalone Angular component, comp
 | listen to an event | `(click)="x = 1"`                       | `@click="x = 1"`, `v-on`                        |
 | template reference | `<app-counter #c />` then `{{ c.n() }}` | `ref="c"`                                       |
 
-Only the slide.ng directives written like Vue ones exist: `v-click`, `v-after`, `v-click-hide`, `v-mark`, `v-motion`, `v-drag`. They are Angular attribute directives. Others (`v-if`, `v-for`, `v-model`, `v-html`, `v-bind`) are plain unknown attributes: no error, and they do nothing.
+Only the slide.ng directives exist (all start with `slide-ng-`): `slide-ng-click`, `slide-ng-after`, `slide-ng-click-hide`, `slide-ng-mark`, `slide-ng-motion`, `slide-ng-drag`. They are Angular attribute directives. Others (`v-if`, `v-for`, `v-model`, `v-html`, `v-bind`) are plain unknown attributes: no error, and they do nothing.
 
 <!-- verify -->
 
@@ -57,10 +57,10 @@ The markdown is converted first, then Angular compiles the result. Follow these 
 - A single `{`, `}` or `@` in normal text (an email address) is escaped for you.
 - A slide has no component class of its own, so it has no fields. Share state inside a slide with template references (`<app-counter #c />`) or `@let`.
 - Code fences and inline code are always plain text: `{{ x }}` and `@if` inside them are shown, not run.
-- Markdown inside a component tag: leave an empty line after the opening tag and before the closing tag, as in `<v-clicks>` lists.
+- Markdown inside a component tag: leave an empty line after the opening tag and before the closing tag, as in `<slide-ng-clicks>` lists.
 
 ## Tags
 
-Component tags are lower-case with dashes: `<slide-toc />`, `<auto-fit-text>`. `<Toc />` and `<Arrow />` are build errors (NG8001, not a known element). An unknown tag with a dash is also a build error; an unknown attribute is silently ignored.
+Component tags are lower-case with dashes: `<slide-ng-toc />`, `<slide-ng-auto-fit-text>`. `<Toc />` and `<Arrow />` are build errors (NG8001, not a known element). An unknown tag with a dash is also a build error; an unknown attribute is silently ignored.
 
 Everything that a Slidev deck gets from `$slidev`, `$nav` or `$clicks` is Angular injection in a component, see `core-injection.md`.

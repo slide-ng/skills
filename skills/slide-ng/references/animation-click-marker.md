@@ -24,8 +24,8 @@ title: Click markers
 
 # Notes with markers
 
-<div v-click>first</div>
-<div v-click>second</div>
+<div slide-ng-click>first</div>
+<div slide-ng-click>second</div>
 
 <!--
 Introduce the slide.

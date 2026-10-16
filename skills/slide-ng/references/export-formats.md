@@ -18,7 +18,7 @@ slide-ng export --url http://localhost:4230/   # export a running server
 Verify: the output says `Exported to <file>` and the file exists.
 
 - **Needs Chromium.** It never downloads one: set `CHROME_PATH` or pass `--executable-path`.
-- PDF: real text, canvas-sized pages, optional outline from slide titles (`--with-toc`), one page per slide or per click (`--with-clicks`). Without `--with-clicks` a slide with clicks shows its last state. `render-when context="print"` content shows only on paper.
+- PDF: real text, canvas-sized pages, optional outline from slide titles (`--with-toc`), one page per slide or per click (`--with-clicks`). Without `--with-clicks` a slide with clicks shows its last state. `slide-ng-render-when context="print"` content shows only on paper.
 - PPTX: **pictures** only, with notes. Editable PowerPoint shapes (`pptx-editable`) are not made.
 - One entry per run (no `export a.md b.md`).
 - Lazy content (Mermaid, Monaco, Magic Move, marks) is waited for through `data-slide-ng-waitfor` markers.
@@ -38,5 +38,5 @@ export:
 
 # Exported
 
-<div v-click>step</div>
+<div slide-ng-click>step</div>
 ```

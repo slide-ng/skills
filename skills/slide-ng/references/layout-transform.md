@@ -1,11 +1,11 @@
 ---
 name: transform
-description: Scale a part of a slide with <transform>
+description: Scale a part of a slide with <slide-ng-transform>
 ---
 
 # Transform
 
-`<transform scale="0.5" origin="top left">` scales what is inside it. `origin` is a CSS `transform-origin`.
+`<slide-ng-transform scale="0.5" origin="top left">` scales what is inside it. `origin` is a CSS `transform-origin`.
 
 <!-- verify -->
 
@@ -16,11 +16,11 @@ title: Transform
 
 # Scaled
 
-<transform scale="0.5" origin="top left">
+<slide-ng-transform scale="0.5" origin="top left">
 
 ## Half size
 
 Content inside.
 
-</transform>
+</slide-ng-transform>
 ```

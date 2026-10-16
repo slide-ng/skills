@@ -23,6 +23,8 @@ fonts:
 - Self-hosting was tested against a fake provider only, never against real Google Fonts.
 - The download runs on the machine that builds: do not build decks from others with `selfHost`.
 
+`provider` is `google`, `coollabs` or `none`; any other address needs `fonts: { allowCustomProvider: true }`, otherwise the build stops.
+
 <!-- verify -->
 
 ```md

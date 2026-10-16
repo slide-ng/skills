@@ -18,3 +18,4 @@ description: The seven MCP tools and their arguments
 - Slide numbers start at 1.
 - `markdown` has no trailing `---` separator.
 - A failed call returns an error text; the server keeps running.
+- Edits cannot switch on `allowOutsideRoot` or `fonts.allowCustomProvider`; those are changed by editing the file yourself. `get_slide` reads only files inside the deck folder (or a theme folder) unless the deck sets `allowOutsideRoot: true`.
