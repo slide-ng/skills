@@ -1,0 +1,6 @@
+# The skill is a verbatim mirror of the core repository. Formatting it would change its hash and
+# break check-sync. Its markdown holds complete decks (`---` slide separators, Angular templates) as
+# test input in the core, where the same files are only formatted with embedded code left alone
+# (see .prettierrc). Here nothing under skills/ is formatted at all.
+skills/
+SOURCE.json

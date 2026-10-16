@@ -1,0 +1,20 @@
+{
+  "name": "slide-ng-skills",
+  "private": true,
+  "description": "The slide.ng agent skill as a standalone, installable mirror of the skill in the core repository",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check-sync": "node scripts/check-sync.mjs",
+    "sync": "node scripts/sync-from-core.mjs",
+    "format": "prettier --write \"**/*.{json,md,yml}\" \"tests/**/*.mjs\" \"scripts/**/*.mjs\"",
+    "format:check": "prettier --check \"**/*.{json,md,yml}\" \"tests/**/*.mjs\" \"scripts/**/*.mjs\"",
+    "prepare": "node scripts/prepare.mjs"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  },
+  "engines": {
+    "node": ">=22.22.3"
+  }
+}
