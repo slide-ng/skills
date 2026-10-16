@@ -23,7 +23,7 @@ description: Keys, mouse, the navigation bar, overview, dark mode and URL state
 - Dark mode follows the system until the user toggles it (kept in `localStorage`, key `slidev-color-schema`). `colorSchema: light` or `dark` fixes it and hides the button.
 - Touch: swipe left/right for click steps, up/down for slides (not while drawing). No pinch zoom.
 - Change the keys with `setup/shortcuts.ts`, see `setup-shortcuts.md`. Change the right-click menu with `setup/context-menu.ts`, see `setup-context-menu.md`.
-- Settings menu: dark mode, slide scale, hide idle cursor, wake lock, presenter cursor style, colour filters, camera. "Download as PDF" is only live with `download` and a built PDF, see `build-pdf-download.md`.
+- Settings menu (as in Slidev): Invert, Brightness, Contrast, Saturation, Sepia, Hue Rotate (slider and number box), Cursor Style (Cursor or Laser, the laser also works on the main page), Slide Scale, Wake Lock, Hide Idle Cursor; below a divider dark mode (only with `colorSchema: auto`), camera and PDF. "Download as PDF" is only live with `download` and a built PDF, see `build-pdf-download.md`.
 - Info dialog shows the headmatter `info` markdown.
 
 The deck, `/presenter/<n>` and `/notes` are described in `presenter-view.md`.
