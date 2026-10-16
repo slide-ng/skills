@@ -1,0 +1,66 @@
+---
+name: angular-syntax
+description: Angular template syntax inside slides.md, and the rules that keep the markdown converter from breaking it
+---
+
+# Angular in markdown
+
+slide.ng is **not Vue**. Each slide becomes a standalone Angular component, compiled ahead of time. Write Angular template syntax, not Vue syntax.
+
+| you want           | write (Angular)                         | never write (Vue)                               |
+| ------------------ | --------------------------------------- | ----------------------------------------------- |
+| show a value       | `{{ n }}`                               | `{{ n }}` (same text, but `n` is not a Vue ref) |
+| condition          | `@if (n > 5) { ... } @else { ... }`     | `v-if`, `v-else`, `v-show`                      |
+| loop               | `@for (x of xs; track x) { ... }`       | `v-for`                                         |
+| switch             | `@switch (x) { @case (1) { ... } }`     | `v-if` chains                                   |
+| local value        | `@let total = a + b;`                   | `<script setup>`, `ref()`, `computed()`         |
+| bind a property    | `[prop]="expr"`                         | `:prop="expr"`, `v-bind`                        |
+| listen to an event | `(click)="x = 1"`                       | `@click="x = 1"`, `v-on`                        |
+| template reference | `<app-counter #c />` then `{{ c.n() }}` | `ref="c"`                                       |
+
+Only the slide.ng directives written like Vue ones exist: `v-click`, `v-after`, `v-click-hide`, `v-mark`, `v-motion`, `v-drag`. They are Angular attribute directives. Others (`v-if`, `v-for`, `v-model`, `v-html`, `v-bind`) are plain unknown attributes: no error, and they do nothing.
+
+<!-- verify -->
+
+```md
+---
+title: Angular in slides
+---
+
+# Angular templates
+
+@let total = 2 + 3;
+
+Total: {{ total }}
+
+@if (total > 4) {
+Big number.
+} @else {
+Small number.
+}
+
+@for (item of ['one', 'two', 'three']; track item) {
+
+- {{ item }}
+
+}
+```
+
+## Rules for the converter
+
+The markdown is converted first, then Angular compiles the result. Follow these so nothing is rewritten:
+
+- `@if`, `@for`, `@switch`, `@case`, `@else` lines (`@name ( ... ) {`) and the closing `}` or `} @else {` go on their own line.
+- `@let name = value;` goes on its own line.
+- A tag with a binding `[x]`, an event `(x)`, a `#ref` or a `*directive` is passed through untouched. Put it on its own line or inline in a paragraph.
+- `{{ ... }}` is passed through untouched. Inside math, `{{` stays math.
+- A single `{`, `}` or `@` in normal text (an email address) is escaped for you.
+- A slide has no component class of its own, so it has no fields. Share state inside a slide with template references (`<app-counter #c />`) or `@let`.
+- Code fences and inline code are always plain text: `{{ x }}` and `@if` inside them are shown, not run.
+- Markdown inside a component tag: leave an empty line after the opening tag and before the closing tag, as in `<v-clicks>` lists.
+
+## Tags
+
+Component tags are lower-case with dashes: `<slide-toc />`, `<auto-fit-text>`. `<Toc />` and `<Arrow />` are build errors (NG8001, not a known element). An unknown tag with a dash is also a build error; an unknown attribute is silently ignored.
+
+Everything that a Slidev deck gets from `$slidev`, `$nav` or `$clicks` is Angular injection in a component, see `core-injection.md`.

@@ -1,0 +1,74 @@
+---
+name: custom-components
+description: Your own Angular standalone components as tags in slides (the components/ folder)
+---
+
+# Your own components
+
+Write a **standalone Angular component** in a `components/` folder next to `slides.md` (no `.vue`, no registration file). Any theme or addon can have the same folder.
+
+Rules:
+
+- One `.ts` file per component, directly in `components/` (sub-folders are not scanned; `*.spec.ts` is ignored).
+- The decorator is read as text: `@Component({ ... selector: '...' ... })` followed directly by `export class Name`. Keep `selector` a string literal and put no other decorator between `})` and `export class`.
+- A tag selector like `hello-box` is used as `<hello-box>`; an attribute selector like `[my-dir]` is used as `my-dir` on any element.
+- The generator imports the component into every slide whose markup contains `<hello-box` (or the attribute). Nothing else to do.
+- Use `input()` signals for inputs; plain attributes (`title="Note"`) pass text, `[x]="expr"` passes values, `(done)="..."` listens to outputs.
+- Content goes in with `<ng-content />`.
+- Give the host classes with `host: { class: '...' }`; UnoCSS classes in templates work.
+- A component with the same class name as a built-in one replaces it. Layouts go in `layouts/` (see `layout-custom.md`).
+- Do not add components to `src/app` or `scripts/lib/registry.mjs`; that is how the built-ins are registered inside the slide.ng repository. For a deck, use `components/`.
+- Import slide.ng services with the alias `slide-ng/` (it means `src/app/`), for example `import { Nav } from 'slide-ng/lib/nav'`. Do not use `../`.
+
+<!-- verify-file: components/hello-box.ts -->
+
+```ts
+import { Component, input } from '@angular/core';
+
+@Component({
+  selector: 'hello-box',
+  host: { class: 'block p-4 my-2 border rounded' },
+  template: '<strong>{{ title() }}</strong><div><ng-content /></div>',
+})
+export class HelloBox {
+  title = input('Hello');
+}
+```
+
+<!-- verify-file: components/click-counter.ts -->
+
+```ts
+import { Component, inject, signal } from '@angular/core';
+import { SLIDE_NO } from 'slide-ng/lib/slide-context';
+
+@Component({
+  selector: 'click-counter',
+  template: '<button (click)="n.set(n() + 1)">{{ n() }} clicks on slide {{ no }}</button>',
+})
+export class ClickCounter {
+  n = signal(0);
+  no = inject(SLIDE_NO);
+}
+```
+
+<!-- verify -->
+
+```md
+---
+title: Own components
+---
+
+# Own components
+
+<hello-box title="Note">Text inside the box.</hello-box>
+
+<click-counter #c />
+
+The counter says {{ c.n() }}.
+```
+
+## Sharing state in a slide
+
+A slide has no class, so give a component a `#name` and read it in the template: `<click-counter #c />` then `{{ c.n() }}`. Across slides, use a service (`providedIn: 'root'`) that your components inject.
+
+See `core-injection.md` for the tokens and services a component may inject.
