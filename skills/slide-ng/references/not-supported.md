@@ -9,13 +9,14 @@ If a feature is not listed as present in the other references, assume it is miss
 
 **Syntax and markup**
 
-- MDC / Comark syntax (`comark: true`, `mdc: true`): not parsed.
+- MDC / Comark syntax (`comark: true`, `mdc: true`): not parsed; the generator warns and the syntax stays text.
+- `:emoji:` shortcodes (type the emoji itself).
 - `<script setup>`, Vue directives other than the slide.ng ones, a Vue-to-Angular converter.
-- `selectable`, `themeConfig`, `TitleRenderer` (slide titles are plain text), `PoweredBySlidev`, `notesAutoRuby`.
+- `selectable`, `themeConfig`, `TitleRenderer` (slide titles are plain text; `$math$` in a title is drawn in the table of contents), `PoweredBySlidev`, `notesAutoRuby`.
 - Slide hooks `onSlideEnter`, `onSlideLeave`, `useIsSlideActive`.
 - `<slide-ng-click>` as a tag, `.hide` modifiers (use `slide-ng-click-hide`), PascalCase tags, `--uno` in `<style>`.
 - UnoCSS attributify (`flex="~"`), variant groups (`hover:(a b)`), the typography preset (`prose`), `transformerDirectives`. Use plain classes.
-- markdown-it typographer (smart quotes, `--`, `...`) and `v-pre` (use `&#123;&#123;` for a literal `{{`).
+- markdown-it typographer (smart quotes, `--`, `...`) and `v-pre` (use `ngNonBindable`, or `&#123;&#123;` for a literal `{{`).
 - `colorSchema: all`. `routerMode: memory`, `setup/routes.ts`.
 
 **Animation**
@@ -31,6 +32,7 @@ If a feature is not listed as present in the other references, assume it is miss
 
 **Presenting**
 
+- The sync mode menu (Slidev's SyncControls: send only, receive only, off). Windows and devices always follow the presenter.
 - A separate camera recording file, mp4 or mkv, cloud upload. No HTTPS for `--remote`.
 - Pinch zoom, touch tuning for drawing and `slide-ng-drag`.
 
@@ -46,6 +48,6 @@ If a feature is not listed as present in the other references, assume it is miss
 - A Prettier plugin (the `format` command covers the markdown structure). The VS Code extension is in the separate slide.ng-vscode repository (first version, not released, never run inside VS Code).
 - `src/app/components` is not scanned; components go in `components/` next to the deck.
 
-**Not checked** (may work, was never tried): Firefox and Safari for exports and offline folders, real devices over a LAN, a real screen-share picker, wake lock, real Google Fonts for self-hosting, GitHub Pages / Netlify hosting, addons built end to end, `npm install slide-ng` from a registry (the package is private for now).
+**Not checked** (may work, was never tried): Firefox and Safari for exports and offline folders, real devices over a LAN, a real screen-share picker, wake lock, real Google Fonts for self-hosting, GitHub Pages / Netlify hosting, addons built end to end, a deck installed from the npm registry with this version (a new deck gets the published `@slide-ng/core` 0.1.0).
 
 When a request needs one of these, say it is not available and offer the nearest thing that exists (for example a component instead of a slide hook).
