@@ -15,10 +15,13 @@ slide.ng is **not Vue**. Each slide becomes a standalone Angular component, comp
 | switch             | `@switch (x) { @case (1) { ... } }`     | `v-if` chains                                   |
 | local value        | `@let total = a + b;`                   | `<script setup>`, `ref()`, `computed()`         |
 | bind a property    | `[prop]="expr"`                         | `:prop="expr"`, `v-bind`                        |
-| listen to an event | `(click)="x = 1"`                       | `@click="x = 1"`, `v-on`                        |
+| listen to an event | `(click)="c.n.set(0)"`                  | `@click="x = 1"`, `v-on`                        |
 | template reference | `<app-counter #c />` then `{{ c.n() }}` | `ref="c"`                                       |
+| format a value     | `{{ price \| currency }}`               | Vue filters                                     |
 
-Only the slide.ng directives exist (all start with `slide-ng-`): `slide-ng-click`, `slide-ng-after`, `slide-ng-click-hide`, `slide-ng-mark`, `slide-ng-motion`, `slide-ng-drag`. They are Angular attribute directives. Others (`v-if`, `v-for`, `v-model`, `v-html`, `v-bind`) are plain unknown attributes: no error, and they do nothing.
+A slide has no component class: an event handler cannot assign a slide field (`(click)="x = 1"` does not compile). Call a method or set a signal of a template reference instead. Angular's common pipes (`number`, `currency`, `percent`, `date`, `json`, `uppercase`, `lowercase`, `titlecase`, `slice`, `keyvalue`, `async`, `i18nPlural`, `i18nSelect`) work and are imported only where used, and so do the common directives (`*ngTemplateOutlet`, `[ngClass]`, `[ngStyle]`, `*ngIf`, `*ngFor`, `[ngSwitch]`) and the forms directives (`[(ngModel)]`, `[formGroup]`, `formControlName`).
+
+Besides those, only the slide.ng directives exist (all start with `slide-ng-`): `slide-ng-click`, `slide-ng-after`, `slide-ng-click-hide`, `slide-ng-mark`, `slide-ng-motion`, `slide-ng-drag`. They are Angular attribute directives. Others (`v-if`, `v-for`, `v-model`, `v-html`, `v-bind`) are plain unknown attributes: no error, and they do nothing.
 
 <!-- verify -->
 
@@ -52,7 +55,7 @@ The markdown is converted first, then Angular compiles the result. Follow these 
 
 - `@if`, `@for`, `@switch`, `@case`, `@else` lines (`@name ( ... ) {`) and the closing `}` or `} @else {` go on their own line.
 - `@let name = value;` goes on its own line.
-- A tag with a binding `[x]`, an event `(x)`, a `#ref` or a `*directive` is passed through untouched. Put it on its own line or inline in a paragraph.
+- A tag with a binding `[x]`, an event `(x)`, a `#ref` or a `*directive` is passed through untouched. Put it on its own line or inline in a paragraph. It may span several lines when it starts its first line and `>` or `/>` ends the last (`@let` may span lines too). A wrapper tag alone on its line keeps the lines below it as HTML until the next empty line, as a plain HTML tag does: leave an empty line after it to write markdown inside.
 - `{{ ... }}` is passed through untouched. Inside math, `{{` stays math.
 - A single `{`, `}` or `@` in normal text (an email address) is escaped for you.
 - A slide has no component class of its own, so it has no fields. Share state inside a slide with template references (`<app-counter #c />`) or `@let`.
