@@ -13,7 +13,7 @@ A standalone, installable copy of the agent skill for [slide.ng](https://github.
 skills/slide-ng/
   SKILL.md          when to use it, quick start, basic syntax, rules, a table of every reference
   README.md         what the skill is and how to install it
-  references/       82 short files, one per topic
+  references/       83 short files, one per topic
 ```
 
 The references cover the CLI, syntax, animation, code, diagrams, layouts, the presenter, build, export, themes, setup files, offline mode and MCP. A `not-supported` reference lists what slide.ng does not have, so an agent does not invent it. Samples are checked to build; whether a deck looks right, or features that need a network, a browser or a real device, are described, not tested.
