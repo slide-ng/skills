@@ -18,13 +18,13 @@ A theme is a folder (or an npm package) with any of: `layouts/`, `components/`, 
 ```json
 {
   "name": "minimal",
-  "headmatter": { "colorSchema": "dark", "transition": "fade" },
-  "layouts": { "quote": { "props": ["author"], "slots": [], "classProp": false } },
-  "fonts": { "sans": "Titillium Web" }
+  "headmatter": { "colorSchema": "dark", "transition": "fade", "fonts": { "sans": "Titillium Web" } },
+  "layouts": { "quote": { "props": ["author"], "slots": [], "classProp": false } }
 }
 ```
 
 - `headmatter`: defaults for the deck; the deck's own wins. `defaults`, `fonts`, `drawings`, `htmlAttrs`, `themeConfig` are merged key by key.
+- `colorSchema: light` or `dark` here means the theme has colours for that mode only: every deck using it keeps that mode (the generator warns when a deck asks for another). Leave it out when the theme styles both.
 - `layouts.<name>`: `props` become inputs, `slots` are accepted after `::name::`, `classProp: true` sends the slide's `class` to the input `contentClass`.
 - Angular providers: `setup/main.ts` (or `setup/providers.ts` default-exporting an array). Tokens: `SHORTCUTS_SETUP`, `CODE_RUNNERS` (`slide-ng/code/runners`), `SYNC_TRANSPORTS` (`slide-ng/sync/transport`).
 - `uno.config.mjs` default export is merged into the app's: `presets`, `rules`, `safelist`, `variants` are added; `shortcuts` and `theme` merge key by key.
