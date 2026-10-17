@@ -1,4 +1,4 @@
-# Contributing to slide.ng-skills
+# Contributing to slide.ng skills
 
 Thanks for helping. First, the one rule that matters here:
 
@@ -29,8 +29,8 @@ The mirror tag is always the core version; see the README.
 You need Node.js 22.23.3 or newer (`.nvmrc` names the version CI uses).
 
 ```sh
-git clone https://github.com/slide-ng/slide.ng-skills.git
-cd slide.ng-skills
+git clone https://github.com/slide-ng/skills.git
+cd skills
 npm install          # also sets core.hooksPath to .githooks and commit.template to .gitmessage
 npm test
 CORE_DIR=../slide.ng npm run check-sync     # optional: compare with a core checkout

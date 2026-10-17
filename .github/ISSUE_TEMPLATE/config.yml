@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Report a security problem
-    url: https://github.com/slide-ng/slide.ng-skills/security/advisories/new
+    url: https://github.com/slide-ng/skills/security/advisories/new
     about: Report vulnerabilities privately, not in a public issue.
   - name: A wrong or missing instruction in the skill
     url: https://github.com/slide-ng/slide.ng/issues/new/choose

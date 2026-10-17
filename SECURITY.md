@@ -4,7 +4,7 @@
 
 Please do not open a public issue for a security problem. Use GitHub's private vulnerability reporting:
 open the **Security** tab of this repository and choose **Report a vulnerability**
-(<https://github.com/slide-ng/slide.ng-skills/security/advisories/new>).
+(<https://github.com/slide-ng/skills/security/advisories/new>).
 
 Describe what you found, which version it affects, and how to reproduce it. We will answer
 in the report and keep it private until a fix is released.

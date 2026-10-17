@@ -30,12 +30,12 @@ slide-ng skills install --dir tools/skills     # tools/skills/slide-ng
 slide-ng skills install --force                # replace an earlier copy
 ```
 
-From this repository, with a tool that installs skills from GitHub (give it `slide-ng/slide.ng-skills` and the skill `slide-ng`), or by hand:
+From this repository, with a tool that installs skills from GitHub (give it `slide-ng/skills` and the skill `slide-ng`), or by hand:
 
 ```sh
-git clone --depth 1 https://github.com/slide-ng/slide.ng-skills.git
+git clone --depth 1 https://github.com/slide-ng/skills.git
 mkdir -p .agents/skills
-cp -r slide.ng-skills/skills/slide-ng .agents/skills/slide-ng
+cp -r skills/skills/slide-ng .agents/skills/slide-ng
 ```
 
 ## Versions

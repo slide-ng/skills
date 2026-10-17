@@ -14,7 +14,7 @@ description: The official themes and where they live
 | `apple-basic` | `@slide-ng/theme-apple-basic` | 10 layouts with props (`image`, `imageLeft`, ...)                          |
 | `adev`        | `@slide-ng/theme-adev`        | angular.dev look, light and dark; `<adev-alert>`, `<adev-card-grid>`, ...  |
 
-- They live in a separate repository (slide.ng-themes), not in this package. Install first: `npm i -D @slide-ng/theme-seriph`, then `theme: seriph`.
+- They live in a separate repository (slide-ng/themes), not in this package. Install first: `npm i -D @slide-ng/theme-seriph`, then `theme: seriph`.
 - A missing official theme stops the build with the install command.
 - The original illustrations are not included (licence); gradients stand in.
 - Check the theme's README for its layout names and props before using one.
