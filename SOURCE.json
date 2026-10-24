@@ -3,13 +3,13 @@
     "name": "slide.ng",
     "repository": "https://github.com/slide-ng/slide.ng",
     "path": "skills/slide-ng",
-    "version": "2.1.0",
-    "commit": "6dece9b9398c8c001657f3eacbd540aa887111ba"
+    "version": "2.2.0",
+    "commit": "b31489f24c67b0344cb57839331f21ac6c7a1617"
   },
   "skill": {
     "path": "skills/slide-ng",
     "algorithm": "sha256",
-    "hash": "cfa0903f6a0e0a3925f69c66074677a41c87486e922ec0c08d84823b4e59587f",
+    "hash": "c3740a85b6a1f04322af45e1734974065d21cfe7168d82bb7c533b14dec65330",
     "files": 87
   },
   "syncedAt": "2026-10-24"
