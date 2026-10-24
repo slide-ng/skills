@@ -6,6 +6,7 @@ All notable changes are listed here. The format follows [Keep a Changelog](https
 
 ### Changed
 
+- `skills/slide-ng` has the 2.1 additions of the core (core commit `e4d9bcf`): the `navPosition` and `languages` headmatter keys in `core-headmatter.md`, `--lang` with `languages` in `core-cli.md`, and the language switch in `presenter-view.md`. See the [slide.ng changelog](https://github.com/slide-ng/slide.ng/blob/main/CHANGELOG.md).
 - `skills/slide-ng` is now the skill of slide.ng 2.0.0 (core commit `7cb036c`). It has two new references, `layout-progress-bar.md` (the `progressBar` headmatter key and `<slide-ng-progress-bar>`) and `setup-routes.md` (`setup/routes.ts`), and 49 changed files for the other 2.0 changes. See the [slide.ng 2.0.0 changelog](https://github.com/slide-ng/slide.ng/blob/main/CHANGELOG.md).
 - The repository is now `slide-ng/skills` (it was `slide-ng/slide.ng-skills`); links point to the new name.
 
