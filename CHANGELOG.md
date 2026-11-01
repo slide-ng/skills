@@ -6,6 +6,7 @@ All notable changes are listed here. The format follows [Keep a Changelog](https
 
 ### Changed
 
+- `skills/slide-ng` is now the skill of slide.ng 3.3.0 (core commit `0d2ab79`): `^3.3.0` in `not-supported.md`.
 - `skills/slide-ng` is now the skill of slide.ng 3.2.0 (core commit `aa6ffa7`): `^3.2.0` in `not-supported.md` (Brave Search in the deck browser's list and the proxy fixes need no skill change).
 - `skills/slide-ng` is now the skill of slide.ng 3.1.1 (core commit `3a67fb7`): Brave Search as the default through a proxy of your own in `core-headmatter.md`, and `^3.1.1` in `not-supported.md`.
 - `skills/slide-ng` is now the skill of slide.ng 3.1.0 (core commit `91e532c`): `browser.proxy` and the search default without a proxy in `core-headmatter.md` and `core-ui-shortcuts.md`, and `^3.1.0` in `not-supported.md`. See the [slide.ng changelog](https://github.com/slide-ng/slide.ng/blob/main/CHANGELOG.md).
