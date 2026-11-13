@@ -6,6 +6,7 @@ All notable changes are listed here. The format follows [Keep a Changelog](https
 
 ### Changed
 
+- `skills/slide-ng` is now the skill of slide.ng 3.6.0 (core commit `1ec2f6a`): **Timer Minutes** in `presenter-view.md`, and `^3.6.0` in `not-supported.md`.
 - `skills/slide-ng` is now the skill of slide.ng 3.5.1 (core commit `c573f2b`): `<slide-ng-timer />` in `core-components.md`, the floating timer in `presenter-view.md`, `?lang=` in `core-headmatter.md`, `public/_redirects` in `build-spa.md`, and `^3.5.1` in `not-supported.md`.
 - `skills/slide-ng` is now the skill of slide.ng 3.4.0 (core commit `2b1828f`): the Chrome button for the deck browser and title text (a `<br>` and `&ngsp;` as a space, a picture as its `alt`) in `core-ui-shortcuts.md`, and `^3.4.0` in `not-supported.md`.
 - `skills/slide-ng` is now the skill of slide.ng 3.3.0 (core commit `0d2ab79`): `^3.3.0` in `not-supported.md`.
